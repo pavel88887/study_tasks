@@ -4,13 +4,19 @@ sum_tiket=0
 while True:
     try:
         count_tiket = int(input('Введите количество билетов, кторое вы бы хотели преобрести:'))
+        if count_tiket<0: raise ValueError()
         print(f'\nКоличество билетов для заказа - {count_tiket}, отлично!\n')
+
         for i in range(count_tiket):
             age=int(input(f'Введите возраст участника, для билета №{i+1}:'))
+
             if 25 > age >= 18:
                 sum_tiket += 990
             elif age >= 25:
                 sum_tiket += 1390
+            elif 18 > age > 0:
+                sum_tiket
+            else:raise ValueError()
     except ValueError:
         print('!!! Введено не корректное значение !!!\n')
         sum_tiket = 0
